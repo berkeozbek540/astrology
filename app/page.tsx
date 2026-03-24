@@ -3,6 +3,13 @@ import Image from "next/image";
 export default function Home() {
   return (
     <section className="bg-krem min-h-screen p-8 flex flex-col items-center">
+      <Image
+        src="/logos/logo.svg"
+        alt="Ruhunun Rehberi Logo"
+        width={1000}
+        height={1000}
+        className="mb-6"
+      />
       {/* Üst Küçük Başlık (Inter) */}
       <span className="font-sans text-toprak tracking-[0.2em] uppercase text-xs mb-4">
         › Ruhunun Rehberi
