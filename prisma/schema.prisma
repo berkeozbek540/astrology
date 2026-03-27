@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Horoscope {
+  id        Int      @id @default(autoincrement())
+  sign      String   
+  date      DateTime 
+  content   String   @db.Text
+  createdAt DateTime @default(now())
+
+  @@unique([sign, date]) 
+}
