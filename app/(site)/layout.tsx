@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter, Playfair_Display } from "next/font/google";
-import "./globals.css";
+import { Inter, Playfair_Display } from "next/font/google";
+import "../globals.css";
+import Navbar from "@/components/layout/Navbar";
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -23,8 +24,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html
+      lang="tr"
+      suppressHydrationWarning
+      className={`${playfair.variable} ${inter.variable} h-full antialiased`}>
+      <body className="bg-krem min-h-screen">
+        <Navbar />
+        <main className="container mx-auto px-4">{children}</main>
+      </body>
     </html>
   );
 }
