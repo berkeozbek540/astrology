@@ -46,7 +46,7 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui;
   --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
 
   --color-krem: var(--krem);
@@ -98,10 +98,11 @@
 }
 
 @layer base {
+  html,
   body {
+    @apply font-sans;
     background-color: var(--background);
     color: var(--foreground);
-    @apply antialiased bg-background text-foreground;
   }
 
   h1,
@@ -110,13 +111,11 @@
   h4,
   h5,
   h6 {
-    @apply font-serif font-medium tracking-tight;
+    font-family: var(--font-serif);
+    @apply font-medium tracking-tight;
   }
   * {
     @apply border-border outline-ring/50;
-  }
-  html {
-    @apply font-sans;
   }
 }
 
