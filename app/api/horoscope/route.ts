@@ -18,18 +18,21 @@ export async function GET(request: NextRequest) {
     today.setHours(0, 0, 0, 0);
 
     const existing = await db.horoscope.findFirst({
-      where: {
-        sign,
-        date: today,
-      },
+      where: { sign, date: today },
     });
 
     if (existing) {
       return NextResponse.json({
         sign: existing.sign,
-        content: existing.content,
         date: existing.date,
         source: "cache",
+        content: {
+          general: existing.general,
+          love: existing.love,
+          career: existing.career,
+          health: existing.health,
+          advice: existing.advice,
+        },
       });
     }
 
@@ -39,16 +42,20 @@ export async function GET(request: NextRequest) {
       data: ZODIAC_SIGNS.map((s) => ({
         sign: s,
         date: today,
-        content: allHoroscopes[s],
+        general: allHoroscopes[s].general,
+        love: allHoroscopes[s].love,
+        career: allHoroscopes[s].career,
+        health: allHoroscopes[s].health,
+        advice: allHoroscopes[s].advice,
       })),
       skipDuplicates: true,
     });
 
     return NextResponse.json({
       sign,
-      content: allHoroscopes[sign],
       date: today,
       source: "gemini",
+      content: allHoroscopes[sign],
     });
   } catch (error) {
     console.error("Horoscope API error:", error);

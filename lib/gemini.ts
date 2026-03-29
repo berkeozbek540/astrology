@@ -19,7 +19,15 @@ export const ZODIAC_SIGNS = [
 
 export type ZodiacSign = (typeof ZODIAC_SIGNS)[number];
 
-export async function generateAllHoroscopes(): Promise<Record<ZodiacSign, string>> {
+export interface HoroscopeContent {
+  general: string;
+  love: string;
+  career: string;
+  health: string;
+  advice: string;
+}
+
+export async function generateAllHoroscopes(): Promise<Record<ZodiacSign, HoroscopeContent>> {
   const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
 
   const today = new Date().toLocaleDateString("tr-TR", {
@@ -30,23 +38,34 @@ export async function generateAllHoroscopes(): Promise<Record<ZodiacSign, string
 
   const prompt = `
 Bugün ${today}. Türkçe olarak 12 burç için günlük astroloji yorumu yaz.
-Her yorum 3-4 cümle olsun. Aşk, kariyer ve genel enerji hakkında konuş.
-Samimi, gizemli ve ilham verici bir dil kullan.
+Her bölüm 2-3 cümle olsun. Samimi, gizemli ve ilham verici bir dil kullan.
 
 SADECE aşağıdaki JSON formatında döndür, başka hiçbir şey yazma, markdown kullanma:
 {
-  "koc": "...",
-  "boga": "...",
-  "ikizler": "...",
-  "yengec": "...",
-  "aslan": "...",
-  "basak": "...",
-  "terazi": "...",
-  "akrep": "...",
-  "yay": "...",
-  "oglak": "...",
-  "kova": "...",
-  "balik": "..."
+  "koc": {
+    "general": "Genel enerji yorumu...",
+    "love": "Aşk ve ilişkiler yorumu...",
+    "career": "Kariyer ve para yorumu...",
+    "health": "Sağlık yorumu...",
+    "advice": "Günün tavsiyesi..."
+  },
+  "boga": {
+    "general": "...",
+    "love": "...",
+    "career": "...",
+    "health": "...",
+    "advice": "..."
+  },
+  "ikizler": { "general": "...", "love": "...", "career": "...", "health": "...", "advice": "..." },
+  "yengec": { "general": "...", "love": "...", "career": "...", "health": "...", "advice": "..." },
+  "aslan": { "general": "...", "love": "...", "career": "...", "health": "...", "advice": "..." },
+  "basak": { "general": "...", "love": "...", "career": "...", "health": "...", "advice": "..." },
+  "terazi": { "general": "...", "love": "...", "career": "...", "health": "...", "advice": "..." },
+  "akrep": { "general": "...", "love": "...", "career": "...", "health": "...", "advice": "..." },
+  "yay": { "general": "...", "love": "...", "career": "...", "health": "...", "advice": "..." },
+  "oglak": { "general": "...", "love": "...", "career": "...", "health": "...", "advice": "..." },
+  "kova": { "general": "...", "love": "...", "career": "...", "health": "...", "advice": "..." },
+  "balik": { "general": "...", "love": "...", "career": "...", "health": "...", "advice": "..." }
 }
 `;
 
@@ -55,6 +74,6 @@ SADECE aşağıdaki JSON formatında döndür, başka hiçbir şey yazma, markdo
 
   const cleaned = text.replace(/```json|```/g, "").trim();
 
-  const horoscopes = JSON.parse(cleaned) as Record<ZodiacSign, string>;
+  const horoscopes = JSON.parse(cleaned) as Record<ZodiacSign, HoroscopeContent>;
   return horoscopes;
 }

@@ -527,7 +527,11 @@ export const HoroscopeScalarFieldEnum = {
   id: 'id',
   sign: 'sign',
   date: 'date',
-  content: 'content',
+  general: 'general',
+  love: 'love',
+  career: 'career',
+  health: 'health',
+  advice: 'advice',
   createdAt: 'createdAt'
 } as const
 

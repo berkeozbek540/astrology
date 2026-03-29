@@ -13,7 +13,11 @@ model Horoscope {
   id        Int      @id @default(autoincrement())
   sign      String   
   date      DateTime 
-  content   String   @db.Text
+  general   String   
+  love      String   
+  career    String   
+  health    String
+  advice    String   
   createdAt DateTime @default(now())
 
   @@unique([sign, date]) 

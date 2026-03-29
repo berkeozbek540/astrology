@@ -38,7 +38,11 @@ export type HoroscopeMinAggregateOutputType = {
   id: number | null
   sign: string | null
   date: Date | null
-  content: string | null
+  general: string | null
+  love: string | null
+  career: string | null
+  health: string | null
+  advice: string | null
   createdAt: Date | null
 }
 
@@ -46,7 +50,11 @@ export type HoroscopeMaxAggregateOutputType = {
   id: number | null
   sign: string | null
   date: Date | null
-  content: string | null
+  general: string | null
+  love: string | null
+  career: string | null
+  health: string | null
+  advice: string | null
   createdAt: Date | null
 }
 
@@ -54,7 +62,11 @@ export type HoroscopeCountAggregateOutputType = {
   id: number
   sign: number
   date: number
-  content: number
+  general: number
+  love: number
+  career: number
+  health: number
+  advice: number
   createdAt: number
   _all: number
 }
@@ -72,7 +84,11 @@ export type HoroscopeMinAggregateInputType = {
   id?: true
   sign?: true
   date?: true
-  content?: true
+  general?: true
+  love?: true
+  career?: true
+  health?: true
+  advice?: true
   createdAt?: true
 }
 
@@ -80,7 +96,11 @@ export type HoroscopeMaxAggregateInputType = {
   id?: true
   sign?: true
   date?: true
-  content?: true
+  general?: true
+  love?: true
+  career?: true
+  health?: true
+  advice?: true
   createdAt?: true
 }
 
@@ -88,7 +108,11 @@ export type HoroscopeCountAggregateInputType = {
   id?: true
   sign?: true
   date?: true
-  content?: true
+  general?: true
+  love?: true
+  career?: true
+  health?: true
+  advice?: true
   createdAt?: true
   _all?: true
 }
@@ -183,7 +207,11 @@ export type HoroscopeGroupByOutputType = {
   id: number
   sign: string
   date: Date
-  content: string
+  general: string
+  love: string
+  career: string
+  health: string
+  advice: string
   createdAt: Date
   _count: HoroscopeCountAggregateOutputType | null
   _avg: HoroscopeAvgAggregateOutputType | null
@@ -214,7 +242,11 @@ export type HoroscopeWhereInput = {
   id?: Prisma.IntFilter<"Horoscope"> | number
   sign?: Prisma.StringFilter<"Horoscope"> | string
   date?: Prisma.DateTimeFilter<"Horoscope"> | Date | string
-  content?: Prisma.StringFilter<"Horoscope"> | string
+  general?: Prisma.StringFilter<"Horoscope"> | string
+  love?: Prisma.StringFilter<"Horoscope"> | string
+  career?: Prisma.StringFilter<"Horoscope"> | string
+  health?: Prisma.StringFilter<"Horoscope"> | string
+  advice?: Prisma.StringFilter<"Horoscope"> | string
   createdAt?: Prisma.DateTimeFilter<"Horoscope"> | Date | string
 }
 
@@ -222,7 +254,11 @@ export type HoroscopeOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   sign?: Prisma.SortOrder
   date?: Prisma.SortOrder
-  content?: Prisma.SortOrder
+  general?: Prisma.SortOrder
+  love?: Prisma.SortOrder
+  career?: Prisma.SortOrder
+  health?: Prisma.SortOrder
+  advice?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -234,7 +270,11 @@ export type HoroscopeWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.HoroscopeWhereInput | Prisma.HoroscopeWhereInput[]
   sign?: Prisma.StringFilter<"Horoscope"> | string
   date?: Prisma.DateTimeFilter<"Horoscope"> | Date | string
-  content?: Prisma.StringFilter<"Horoscope"> | string
+  general?: Prisma.StringFilter<"Horoscope"> | string
+  love?: Prisma.StringFilter<"Horoscope"> | string
+  career?: Prisma.StringFilter<"Horoscope"> | string
+  health?: Prisma.StringFilter<"Horoscope"> | string
+  advice?: Prisma.StringFilter<"Horoscope"> | string
   createdAt?: Prisma.DateTimeFilter<"Horoscope"> | Date | string
 }, "id" | "sign_date">
 
@@ -242,7 +282,11 @@ export type HoroscopeOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   sign?: Prisma.SortOrder
   date?: Prisma.SortOrder
-  content?: Prisma.SortOrder
+  general?: Prisma.SortOrder
+  love?: Prisma.SortOrder
+  career?: Prisma.SortOrder
+  health?: Prisma.SortOrder
+  advice?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   _count?: Prisma.HoroscopeCountOrderByAggregateInput
   _avg?: Prisma.HoroscopeAvgOrderByAggregateInput
@@ -258,14 +302,22 @@ export type HoroscopeScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"Horoscope"> | number
   sign?: Prisma.StringWithAggregatesFilter<"Horoscope"> | string
   date?: Prisma.DateTimeWithAggregatesFilter<"Horoscope"> | Date | string
-  content?: Prisma.StringWithAggregatesFilter<"Horoscope"> | string
+  general?: Prisma.StringWithAggregatesFilter<"Horoscope"> | string
+  love?: Prisma.StringWithAggregatesFilter<"Horoscope"> | string
+  career?: Prisma.StringWithAggregatesFilter<"Horoscope"> | string
+  health?: Prisma.StringWithAggregatesFilter<"Horoscope"> | string
+  advice?: Prisma.StringWithAggregatesFilter<"Horoscope"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Horoscope"> | Date | string
 }
 
 export type HoroscopeCreateInput = {
   sign: string
   date: Date | string
-  content: string
+  general: string
+  love: string
+  career: string
+  health: string
+  advice: string
   createdAt?: Date | string
 }
 
@@ -273,14 +325,22 @@ export type HoroscopeUncheckedCreateInput = {
   id?: number
   sign: string
   date: Date | string
-  content: string
+  general: string
+  love: string
+  career: string
+  health: string
+  advice: string
   createdAt?: Date | string
 }
 
 export type HoroscopeUpdateInput = {
   sign?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  content?: Prisma.StringFieldUpdateOperationsInput | string
+  general?: Prisma.StringFieldUpdateOperationsInput | string
+  love?: Prisma.StringFieldUpdateOperationsInput | string
+  career?: Prisma.StringFieldUpdateOperationsInput | string
+  health?: Prisma.StringFieldUpdateOperationsInput | string
+  advice?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -288,7 +348,11 @@ export type HoroscopeUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   sign?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  content?: Prisma.StringFieldUpdateOperationsInput | string
+  general?: Prisma.StringFieldUpdateOperationsInput | string
+  love?: Prisma.StringFieldUpdateOperationsInput | string
+  career?: Prisma.StringFieldUpdateOperationsInput | string
+  health?: Prisma.StringFieldUpdateOperationsInput | string
+  advice?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -296,14 +360,22 @@ export type HoroscopeCreateManyInput = {
   id?: number
   sign: string
   date: Date | string
-  content: string
+  general: string
+  love: string
+  career: string
+  health: string
+  advice: string
   createdAt?: Date | string
 }
 
 export type HoroscopeUpdateManyMutationInput = {
   sign?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  content?: Prisma.StringFieldUpdateOperationsInput | string
+  general?: Prisma.StringFieldUpdateOperationsInput | string
+  love?: Prisma.StringFieldUpdateOperationsInput | string
+  career?: Prisma.StringFieldUpdateOperationsInput | string
+  health?: Prisma.StringFieldUpdateOperationsInput | string
+  advice?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -311,7 +383,11 @@ export type HoroscopeUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   sign?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  content?: Prisma.StringFieldUpdateOperationsInput | string
+  general?: Prisma.StringFieldUpdateOperationsInput | string
+  love?: Prisma.StringFieldUpdateOperationsInput | string
+  career?: Prisma.StringFieldUpdateOperationsInput | string
+  health?: Prisma.StringFieldUpdateOperationsInput | string
+  advice?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -324,7 +400,11 @@ export type HoroscopeCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   sign?: Prisma.SortOrder
   date?: Prisma.SortOrder
-  content?: Prisma.SortOrder
+  general?: Prisma.SortOrder
+  love?: Prisma.SortOrder
+  career?: Prisma.SortOrder
+  health?: Prisma.SortOrder
+  advice?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -336,7 +416,11 @@ export type HoroscopeMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   sign?: Prisma.SortOrder
   date?: Prisma.SortOrder
-  content?: Prisma.SortOrder
+  general?: Prisma.SortOrder
+  love?: Prisma.SortOrder
+  career?: Prisma.SortOrder
+  health?: Prisma.SortOrder
+  advice?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -344,7 +428,11 @@ export type HoroscopeMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   sign?: Prisma.SortOrder
   date?: Prisma.SortOrder
-  content?: Prisma.SortOrder
+  general?: Prisma.SortOrder
+  love?: Prisma.SortOrder
+  career?: Prisma.SortOrder
+  health?: Prisma.SortOrder
+  advice?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
 }
 
@@ -374,7 +462,11 @@ export type HoroscopeSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   id?: boolean
   sign?: boolean
   date?: boolean
-  content?: boolean
+  general?: boolean
+  love?: boolean
+  career?: boolean
+  health?: boolean
+  advice?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["horoscope"]>
 
@@ -382,7 +474,11 @@ export type HoroscopeSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
   id?: boolean
   sign?: boolean
   date?: boolean
-  content?: boolean
+  general?: boolean
+  love?: boolean
+  career?: boolean
+  health?: boolean
+  advice?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["horoscope"]>
 
@@ -390,7 +486,11 @@ export type HoroscopeSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
   id?: boolean
   sign?: boolean
   date?: boolean
-  content?: boolean
+  general?: boolean
+  love?: boolean
+  career?: boolean
+  health?: boolean
+  advice?: boolean
   createdAt?: boolean
 }, ExtArgs["result"]["horoscope"]>
 
@@ -398,11 +498,15 @@ export type HoroscopeSelectScalar = {
   id?: boolean
   sign?: boolean
   date?: boolean
-  content?: boolean
+  general?: boolean
+  love?: boolean
+  career?: boolean
+  health?: boolean
+  advice?: boolean
   createdAt?: boolean
 }
 
-export type HoroscopeOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "sign" | "date" | "content" | "createdAt", ExtArgs["result"]["horoscope"]>
+export type HoroscopeOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "sign" | "date" | "general" | "love" | "career" | "health" | "advice" | "createdAt", ExtArgs["result"]["horoscope"]>
 
 export type $HoroscopePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Horoscope"
@@ -411,7 +515,11 @@ export type $HoroscopePayload<ExtArgs extends runtime.Types.Extensions.InternalA
     id: number
     sign: string
     date: Date
-    content: string
+    general: string
+    love: string
+    career: string
+    health: string
+    advice: string
     createdAt: Date
   }, ExtArgs["result"]["horoscope"]>
   composites: {}
@@ -839,7 +947,11 @@ export interface HoroscopeFieldRefs {
   readonly id: Prisma.FieldRef<"Horoscope", 'Int'>
   readonly sign: Prisma.FieldRef<"Horoscope", 'String'>
   readonly date: Prisma.FieldRef<"Horoscope", 'DateTime'>
-  readonly content: Prisma.FieldRef<"Horoscope", 'String'>
+  readonly general: Prisma.FieldRef<"Horoscope", 'String'>
+  readonly love: Prisma.FieldRef<"Horoscope", 'String'>
+  readonly career: Prisma.FieldRef<"Horoscope", 'String'>
+  readonly health: Prisma.FieldRef<"Horoscope", 'String'>
+  readonly advice: Prisma.FieldRef<"Horoscope", 'String'>
   readonly createdAt: Prisma.FieldRef<"Horoscope", 'DateTime'>
 }
     
