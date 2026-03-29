@@ -5,6 +5,7 @@ export interface ZodiacSign {
   iconName: string;
   element: "ateş" | "toprak" | "hava" | "su";
   planet: string;
+  luckyNumber: string;
   dates: string;
 }
 
@@ -16,6 +17,7 @@ export const zodiacSigns: ZodiacSign[] = [
     iconName: "/icons/zodiac/koc.svg",
     element: "ateş",
     planet: "Mars",
+    luckyNumber: "1",
     dates: "21 Mart - 19 Nisan",
   },
   {
@@ -25,6 +27,7 @@ export const zodiacSigns: ZodiacSign[] = [
     iconName: "/icons/zodiac/boga.svg",
     element: "toprak",
     planet: "Venüs",
+    luckyNumber: "2",
     dates: "20 Nisan - 20 Mayıs",
   },
   {
@@ -34,6 +37,7 @@ export const zodiacSigns: ZodiacSign[] = [
     iconName: "/icons/zodiac/ikizler.svg",
     element: "hava",
     planet: "Merkür",
+    luckyNumber: "3",
     dates: "21 Mayıs - 20 Haziran",
   },
   {
@@ -43,6 +47,7 @@ export const zodiacSigns: ZodiacSign[] = [
     iconName: "/icons/zodiac/yengec.svg",
     element: "su",
     planet: "Ay",
+    luckyNumber: "4",
     dates: "21 Haziran - 22 Temmuz",
   },
   {
@@ -52,6 +57,7 @@ export const zodiacSigns: ZodiacSign[] = [
     iconName: "/icons/zodiac/aslan.svg",
     element: "ateş",
     planet: "Güneş",
+    luckyNumber: "5",
     dates: "23 Temmuz - 22 Ağustos",
   },
   {
@@ -61,6 +67,7 @@ export const zodiacSigns: ZodiacSign[] = [
     iconName: "/icons/zodiac/basak.svg",
     element: "toprak",
     planet: "Merkür",
+    luckyNumber: "6",
     dates: "23 Ağustos - 22 Eylül",
   },
   {
@@ -70,6 +77,7 @@ export const zodiacSigns: ZodiacSign[] = [
     iconName: "/icons/zodiac/terazi.svg",
     element: "hava",
     planet: "Venüs",
+    luckyNumber: "7",
     dates: "23 Eylül - 22 Ekim",
   },
   {
@@ -79,6 +87,7 @@ export const zodiacSigns: ZodiacSign[] = [
     iconName: "/icons/zodiac/akrep.svg",
     element: "su",
     planet: "Plüton",
+    luckyNumber: "8",
     dates: "23 Ekim - 21 Kasım",
   },
   {
@@ -88,6 +97,7 @@ export const zodiacSigns: ZodiacSign[] = [
     iconName: "/icons/zodiac/yay.svg",
     element: "ateş",
     planet: "Jüpiter",
+    luckyNumber: "9",
     dates: "22 Kasım - 21 Aralık",
   },
   {
@@ -97,6 +107,7 @@ export const zodiacSigns: ZodiacSign[] = [
     iconName: "/icons/zodiac/oglak.svg",
     element: "toprak",
     planet: "Satürn",
+    luckyNumber: "10",
     dates: "22 Aralık - 19 Ocak",
   },
   {
@@ -106,6 +117,7 @@ export const zodiacSigns: ZodiacSign[] = [
     iconName: "/icons/zodiac/kova.svg",
     element: "hava",
     planet: "Uranüs",
+    luckyNumber: "11",
     dates: "20 Ocak - 18 Şubat",
   },
   {
@@ -115,6 +127,7 @@ export const zodiacSigns: ZodiacSign[] = [
     iconName: "/icons/zodiac/balik.svg",
     element: "su",
     planet: "Neptün",
+    luckyNumber: "12",
     dates: "19 Şubat - 20 Mart",
   },
 ];

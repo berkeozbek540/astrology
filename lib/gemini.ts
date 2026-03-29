@@ -38,7 +38,7 @@ export async function generateAllHoroscopes(): Promise<Record<ZodiacSign, Horosc
 
   const prompt = `
 Bugün ${today}. Türkçe olarak 12 burç için günlük astroloji yorumu yaz.
-Her bölüm 2-3 cümle olsun. Samimi, gizemli ve ilham verici bir dil kullan.
+Her bölüm 4-5 cümle olsun. Samimi, gizemli ve ilham verici bir dil kullan.
 
 SADECE aşağıdaki JSON formatında döndür, başka hiçbir şey yazma, markdown kullanma:
 {
