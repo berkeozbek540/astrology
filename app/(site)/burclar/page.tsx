@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const page = () => {
   return (
-    <div className="container mx-auto p-8">
+    <div className="container mx-auto p-8 mb-8">
       <div className="flex flex-col justify-center items-center">
         <h1 className="text-6xl pb-4">Burcunu Seç</h1>
         <p className="text-lg text-gray-500">Yıldızların senin için bugünkü mesajını öğren.</p>
