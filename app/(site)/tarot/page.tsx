@@ -3,10 +3,17 @@ import { AnimatePresence } from "framer-motion";
 import CardSelectionView from "@/components/tarot/CardSelectionView";
 import RevealCardsView from "@/components/tarot/RevealCardsView";
 import { useTarot } from "@/hooks/useTarot";
+import { useEffect } from "react";
 
 const TarotPage = () => {
-  const { selectedCards, shuffledCards, isRevealed, handleCardClick, handleRevealClick } =
-    useTarot();
+  const {
+    selectedCards,
+    shuffledCards,
+    isRevealed,
+    handleCardClick,
+    handleRevealClick,
+    resetTarot,
+  } = useTarot();
 
   if (shuffledCards.length === 0) {
     return (
@@ -20,7 +27,7 @@ const TarotPage = () => {
     <div className="container mx-auto p-8 mb-8">
       <AnimatePresence mode="wait">
         {isRevealed ? (
-          <RevealCardsView selectedCards={selectedCards} />
+          <RevealCardsView selectedCards={selectedCards} resetTarot={resetTarot} />
         ) : (
           <CardSelectionView
             shuffledCards={shuffledCards}

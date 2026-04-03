@@ -14,6 +14,12 @@ export const useTarot = () => {
   const [shuffledCards, setShuffledCards] = useState<TarotCard[]>([]);
   const [isRevealed, setIsRevealed] = useState<boolean>(false);
 
+  const resetTarot = () => {
+    setSelectedCards([]);
+    setIsRevealed(false);
+    setShuffledCards(shuffleTarotDeck(tarotCards));
+  };
+
   useEffect(() => {
     setShuffledCards(shuffleTarotDeck(tarotCards));
   }, []);
@@ -56,5 +62,12 @@ export const useTarot = () => {
   const handleRevealClick = () => {
     setIsRevealed(true);
   };
-  return { selectedCards, shuffledCards, isRevealed, handleCardClick, handleRevealClick };
+  return {
+    selectedCards,
+    shuffledCards,
+    isRevealed,
+    handleCardClick,
+    handleRevealClick,
+    resetTarot,
+  };
 };

@@ -28,6 +28,14 @@ const CardSelectionView = ({
         <h1 className="text-6xl pb-4">Tarot Rehberi</h1>
         <p className="text-lg text-gray-500">Geçmiş, Şimdi ve Gelecek için üç kart seç</p>
         <p className="text-gray-400">3 Kart Seç {selectedCards.length}/3</p>
+        <div className="flex justify-center mt-8">
+          <Button
+            onClick={handleRevealClick}
+            disabled={selectedCards.length !== 3}
+            className="md:fixed md:bottom-1/2 md:right-0 text-2xl bg-kahve text-white py-6 px-3 rounded-lg shadow-lg hover:bg-koyu transition-colors duration-300 cursor-pointer">
+            Kartları Çek
+          </Button>
+        </div>
       </div>
       <div className="grid grid-cols-4 md:grid-cols-10 gap-4 py-8 ">
         {shuffledCards.map((card, index) => (
@@ -54,14 +62,6 @@ const CardSelectionView = ({
             />
           </motion.div>
         ))}
-      </div>
-      <div className="flex justify-center mt-8">
-        <Button
-          onClick={handleRevealClick}
-          disabled={selectedCards.length !== 3}
-          className="text-2xl bg-bej text-kahve py-6 px-3 hover:cursor-pointer">
-          Kartları Çek
-        </Button>
       </div>
     </motion.div>
   );

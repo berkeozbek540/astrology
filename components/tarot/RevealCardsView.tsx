@@ -1,14 +1,17 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { TarotCard, tarotCards } from "@/lib/tarot-data";
+import Link from "next/link";
+import { ChevronLeft } from "lucide-react";
 
 const labels = ["Geçmiş", "Şimdi", "Gelecek"];
 
 interface CardSelectionViewProps {
   selectedCards: { card: TarotCard; isReversed: boolean }[];
+  resetTarot: () => void;
 }
 
-const RevealCardsView = ({ selectedCards }: CardSelectionViewProps) => {
+const RevealCardsView = ({ selectedCards, resetTarot }: CardSelectionViewProps) => {
   return (
     <motion.div
       key="results"
@@ -16,6 +19,13 @@ const RevealCardsView = ({ selectedCards }: CardSelectionViewProps) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}>
+      <Link
+        href="/tarot"
+        onClick={resetTarot}
+        className="inline-flex items-center gap-2 text-sm text-kahve hover:text-koyu transition-colors duration-200 mb-4">
+        <ChevronLeft className="w-4 h-4" />
+        Tekrar Kart Seç
+      </Link>
       <div className="mb-8 text-center">
         <h2 className="text-4xl font-bold text-kahve mb-4">Seçilen Kartlar</h2>
       </div>
@@ -54,9 +64,16 @@ const RevealCardsView = ({ selectedCards }: CardSelectionViewProps) => {
           );
         })}
       </div>
-      <p className="text-gray-500 text-center py-8">
-        Bu kartların senin hayatına özel derinlemesine yorumunu almak ister misin?
-      </p>
+      <div className="text-center">
+        <p className="text-gray-500 text-center py-8">
+          Bu kartların senin hayatına özel derinlemesine yorumunu almak ister misin?
+        </p>
+        <Link
+          href="/iletisim"
+          className="bg-kahve text-white py-3 px-6 rounded-lg shadow-lg hover:bg-koyu transition-colors duration-300">
+          İletişime Geç
+        </Link>
+      </div>
     </motion.div>
   );
 };
