@@ -1,6 +1,7 @@
 ignoredBuiltDependencies:
   - '@prisma/client'
   - '@prisma/engines'
+  - core-js
   - msw
   - prisma
   - sharp

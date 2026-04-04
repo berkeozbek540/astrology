@@ -38,7 +38,7 @@ const Footer = () => {
 
             <Link href="https://www.instagram.com/astrolog.melistezcan/" target="_blank">
               <Image
-                src="/icons/instagram.svg"
+                src="/icons/social/instagram.svg"
                 alt="Instagram"
                 width={24}
                 height={24}

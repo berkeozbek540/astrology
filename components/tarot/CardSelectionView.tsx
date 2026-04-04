@@ -32,7 +32,7 @@ const CardSelectionView = ({
           <Button
             onClick={handleRevealClick}
             disabled={selectedCards.length !== 3}
-            className="md:fixed md:bottom-1/2 md:right-0 text-2xl bg-kahve text-white py-6 px-3 rounded-lg shadow-lg hover:bg-koyu transition-colors duration-300 cursor-pointer">
+            className="text-2xl bg-kahve text-white py-6 px-3 rounded-lg shadow-lg hover:bg-koyu transition-colors duration-300 cursor-pointer">
             Kartları Çek
           </Button>
         </div>
