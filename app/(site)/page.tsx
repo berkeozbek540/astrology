@@ -1,10 +1,10 @@
+import Hero from "@/components/home/Hero";
 import React from "react";
 
 const page = () => {
   return (
-    <div>
-      <h1>page</h1>
-      <p>page</p>
+    <div className="container mx-auto p-8 mb-8">
+      <Hero />
     </div>
   );
 };

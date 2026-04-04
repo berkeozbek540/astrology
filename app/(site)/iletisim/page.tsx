@@ -75,6 +75,10 @@ const page = () => {
             </div>
             <div className="flex items-center gap-3 my-4">
               <span className="text-altin">✦</span>
+              <span className="text-sm">Tarot Açılımı</span>
+            </div>
+            <div className="flex items-center gap-3 my-4">
+              <span className="text-altin">✦</span>
               <span className="text-sm">Yıllık Öngörü & Transitler</span>
             </div>
             <div className="flex flex-col">
