@@ -11,7 +11,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full border-b border-altin/30">
-      <div className="container mx-auto p-8 flex items-center justify-between">
+      <div className="container mx-auto p-4 flex items-center justify-between">
         <div>
           <Link href="/">
             <Image
