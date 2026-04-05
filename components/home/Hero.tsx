@@ -23,14 +23,13 @@ const Hero = () => {
           </Link>
         </div>
       </div>
-      <div>
-        {" "}
+      <div className="hidden md:block">
         <Image
-          src="/hero.png"
+          src="/Hero.svg"
           alt="Hero Image"
           width={500}
           height={500}
-          className="w-full h-auto rounded-lg shadow-lg"
+          className="w-full h-auto "
         />
       </div>
     </div>
