@@ -32,7 +32,9 @@ const Blog = () => {
               </span>
               <span className="text-gray-500 text-xs">{date}</span>
               <h3 className="text-xl font-semibold mt-4">{title}</h3>
-              <p className="text-sm text-gray-600 my-2 line-clamp-3">{description}</p>
+              <p className="text-sm text-gray-600 my-2 line-clamp-3 leading-relaxed">
+                {description}
+              </p>
               <span className="text-kahve ">
                 Devamını Oku
                 <ChevronRight className="inline-block" />
