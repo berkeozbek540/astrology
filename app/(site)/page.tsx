@@ -1,12 +1,13 @@
 import Hero from "@/components/home/Hero";
-import React from "react";
+import Services from "@/components/home/Services";
 
-const page = () => {
+const HomePage = () => {
   return (
     <div className="container mx-auto p-8 mb-8">
       <Hero />
+      <Services />
     </div>
   );
 };
 
-export default page;
+export default HomePage;

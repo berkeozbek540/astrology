@@ -15,10 +15,10 @@ const Hero = () => {
           söylediğini öğren.
         </p>
         <div className="flex md:flex-row flex-col items-center gap-4 mt-8">
-          <Link href="/astroloji" className="bg-kahve text-white px-6 py-3 rounded-full w-max">
+          <Link href="/burclar" className="bg-kahve text-white px-6 py-3 rounded-full w-max">
             Bugünkü yorumunu gör
           </Link>
-          <Link href="/burclar" className="border-b border-kahve text-kahve pb-2">
+          <Link href="/tarot" className="border-b border-kahve text-kahve pb-2">
             Geçmişini, bugününü ve geleceğini keşfet
           </Link>
         </div>
