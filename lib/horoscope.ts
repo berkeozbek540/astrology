@@ -6,7 +6,7 @@ export async function getHoroscope(slug: string) {
   today.setHours(0, 0, 0, 0);
 
   // Simulate a delay to show the loading state
-  await new Promise((resolve) => setTimeout(resolve, 5000));
+  //await new Promise((resolve) => setTimeout(resolve, 5000));
 
   const existing = await db.horoscope.findFirst({
     where: { sign: slug, date: today },
