@@ -1,5 +1,6 @@
 import Banner from "@/components/home/Banner";
 import Blog from "@/components/home/Blog";
+import Contact from "@/components/home/Contact";
 import Hero from "@/components/home/Hero";
 import Services from "@/components/home/Services";
 import PageTransition from "@/components/layout/PageTransition";
@@ -12,6 +13,7 @@ const HomePage = () => {
         <Banner />
         <Services />
         <Blog />
+        <Contact />
       </div>
     </PageTransition>
   );

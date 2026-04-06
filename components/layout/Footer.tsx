@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { links } from "@/lib/nav-links";
 import Image from "next/image";
-import { Mail } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -23,6 +22,11 @@ const Footer = () => {
           </div>
           <div className="pb-8 md:pb-0">
             <h2 className="text-bej text-2xl mb-2">Hızlı Menü</h2>
+            <Link
+              href="/"
+              className="text-sm block py-1 text-bej hover:text-koyu transition-colors duration-300">
+              ANASAYFA
+            </Link>
             {links.map(({ href, label }) => (
               <Link
                 key={href}
@@ -36,15 +40,26 @@ const Footer = () => {
             <h2 className="text-bej text-2xl">İletişim</h2>
             <p className="text-bej">demo@gmail.com</p>
 
-            <Link href="https://www.instagram.com/astrolog.melistezcan/" target="_blank">
-              <Image
-                src="/icons/social/instagram.svg"
-                alt="Instagram"
-                width={24}
-                height={24}
-                className="mt-2"
-              />
-            </Link>
+            <div className="flex gap-4">
+              <Link href="https://www.instagram.com/astrolog.melistezcan/" target="_blank">
+                <Image
+                  src="/icons/social/instagram.svg"
+                  alt="Instagram"
+                  width={24}
+                  height={24}
+                  className="mt-2"
+                />
+              </Link>
+              <Link href="https://wa.me/905545153251" target="_blank">
+                <Image
+                  src="/icons/social/whatsapp.svg"
+                  alt="Instagram"
+                  width={24}
+                  height={24}
+                  className="mt-2"
+                />
+              </Link>
+            </div>
           </div>
         </div>
       </div>
