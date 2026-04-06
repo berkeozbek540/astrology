@@ -29,7 +29,7 @@ export async function GET(request: NextRequest) {
       data: ZODIAC_SIGNS.map((sign) => ({
         sign,
         date: today,
-        content: allHoroscopes[sign],
+        ...allHoroscopes[sign],
       })),
       skipDuplicates: true,
     });
