@@ -22,3 +22,8 @@ export * from './enums';
  * 
  */
 export type Horoscope = Prisma.HoroscopeModel
+/**
+ * Model Post
+ * 
+ */
+export type Post = Prisma.PostModel

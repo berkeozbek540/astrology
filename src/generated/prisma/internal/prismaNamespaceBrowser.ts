@@ -49,7 +49,8 @@ export const AnyNull = runtime.objectEnumValues.instances.AnyNull
 
 
 export const ModelName = {
-  Horoscope: 'Horoscope'
+  Horoscope: 'Horoscope',
+  Post: 'Post'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -83,6 +84,21 @@ export const HoroscopeScalarFieldEnum = {
 export type HoroscopeScalarFieldEnum = (typeof HoroscopeScalarFieldEnum)[keyof typeof HoroscopeScalarFieldEnum]
 
 
+export const PostScalarFieldEnum = {
+  id: 'id',
+  category: 'category',
+  coverImage: 'coverImage',
+  title: 'title',
+  slug: 'slug',
+  description: 'description',
+  content: 'content',
+  published: 'published',
+  createdAt: 'createdAt'
+} as const
+
+export type PostScalarFieldEnum = (typeof PostScalarFieldEnum)[keyof typeof PostScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -97,4 +113,12 @@ export const QueryMode = {
 } as const
 
 export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 

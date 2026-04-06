@@ -22,3 +22,15 @@ model Horoscope {
 
   @@unique([sign, date]) 
 }
+
+model Post {
+  id        Int      @id @default(autoincrement())
+  category  String
+  coverImage String?
+  title     String
+  slug      String   @unique
+  description String
+  content     String
+  published Boolean  @default(false)
+  createdAt DateTime @default(now())
+}

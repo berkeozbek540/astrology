@@ -23,12 +23,12 @@ const Blog = () => {
         </Link>
       </div>
       <div className="flex flex-col md:flex-row md:justify-between gap-8 ">
-        {blogPosts.map(({ id, type, date, imageUrl, title, description, blogUrl }) => (
+        {blogPosts.map(({ id, category, date, imageUrl, title, description, blogUrl }) => (
           <Link key={id} href={blogUrl} className="w-full md:w-1/3">
             <motion.div className="relative bg-white rounded-xl p-8 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
               <Image src="/hero.svg" alt={title} width={200} height={200} className="rounded-lg" />
               <span className="bg-kahve rounded-xl absolute top-4 left-4 text-sm text-bej px-2 py-1">
-                {type}
+                {category}
               </span>
               <span className="text-gray-500 text-xs">{date}</span>
               <h3 className="text-xl font-semibold mt-4">{title}</h3>

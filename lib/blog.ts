@@ -1,6 +1,6 @@
 export interface BlogPost {
   id: string;
-  type: string;
+  category: string;
   imageUrl: string;
   blogUrl: string;
   title: string;
@@ -11,7 +11,7 @@ export interface BlogPost {
 export const blogPosts: BlogPost[] = [
   {
     id: "1",
-    type: "Burçlar",
+    category: "Burçlar",
     imageUrl: "/images/blog/burclar.jpg",
     blogUrl: "/blog/burclar-ozellikleri-ve-etkileri",
     title: "Burçların Özellikleri ve Etkileri",
@@ -21,7 +21,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: "2",
-    type: "Burçlar",
+    category: "Burçlar",
     imageUrl: "/images/blog/burclar.jpg",
     blogUrl: "/blog/burclar-ozellikleri-ve-etkileri",
     title: "Burçların Özellikleri ve Etkileri",
@@ -31,7 +31,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: "3",
-    type: "Burçlar",
+    category: "Burçlar",
     imageUrl: "/images/blog/burclar.jpg",
     blogUrl: "/blog/burclar-ozellikleri-ve-etkileri",
     title: "Burçların Özellikleri ve Etkileri",
