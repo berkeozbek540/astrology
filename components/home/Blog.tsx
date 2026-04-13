@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
+export const revalidate = 3600;
+
 type Post = {
   id: number;
   title: string;
