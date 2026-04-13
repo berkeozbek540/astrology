@@ -2,8 +2,9 @@ import { generateAllHoroscopes, ZODIAC_SIGNS } from "@/lib/gemini";
 import { db } from "@/lib/db";
 
 export async function getHoroscope(slug: string) {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  const now = new Date();
+  const turkeyTime = new Date(now.toLocaleString("en-US", { timeZone: "Europe/Istanbul" }));
+  const today = new Date(turkeyTime.getFullYear(), turkeyTime.getMonth(), turkeyTime.getDate());
 
   // Simulate a delay to show the loading state
   //await new Promise((resolve) => setTimeout(resolve, 5000));
