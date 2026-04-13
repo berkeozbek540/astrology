@@ -1,11 +1,20 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { blogPosts } from "@/lib/blog";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
-const Blog = () => {
+type Post = {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  category: string;
+  coverImage: string;
+  createdAt: Date;
+};
+
+const Blog = ({ posts }: { posts: Post[] }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -22,23 +31,32 @@ const Blog = () => {
           <ChevronRight className="inline-block" />
         </Link>
       </div>
-      <div className="flex flex-col md:flex-row md:justify-between gap-8 ">
-        {blogPosts.map(({ id, category, date, imageUrl, title, description, blogUrl }) => (
-          <Link key={id} href={blogUrl} className="w-full md:w-1/3">
-            <motion.div className="relative bg-white rounded-xl p-8 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1">
-              <Image src="/hero.svg" alt={title} width={200} height={200} className="rounded-lg" />
+      <div className="flex flex-col md:flex-row md:justify-between gap-8">
+        {posts.map((post) => (
+          <Link key={post.id} href={`/blog/${post.slug}`} className="w-full md:w-1/3">
+            <motion.div className="relative bg-white rounded-xl p-8 transition-transform duration-300 hover:shadow-lg hover:-translate-y-1 h-full">
+              <div className="relative w-full h-[200px] mb-4">
+                <Image
+                  src={post.coverImage || "/hero.svg"}
+                  alt={post.title}
+                  fill
+                  className="rounded-lg object-cover"
+                />
+              </div>
               <span className="bg-kahve rounded-xl absolute top-4 left-4 text-sm text-bej px-2 py-1">
-                {category}
+                {post.category}
               </span>
-              <span className="text-gray-500 text-xs">{date}</span>
-              <h3 className="text-xl font-semibold mt-4">{title}</h3>
+              <span className="text-gray-500 text-xs">
+                {new Date(post.createdAt).toLocaleDateString("tr-TR")}
+              </span>
+              <h3 className="text-xl font-semibold mt-4">{post.title}</h3>
               <p className="text-sm text-gray-600 my-2 line-clamp-3 leading-relaxed">
-                {description}
+                {post.description}
               </p>
-              <span className="text-kahve ">
+              <div className="text-kahve mt-4">
                 Devamını Oku
                 <ChevronRight className="inline-block" />
-              </span>
+              </div>
             </motion.div>
           </Link>
         ))}

@@ -10,9 +10,8 @@ const Contact = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="mt-24 px-4 max-w-7xl mx-auto">
+      className="mt-24 px-4 md:max-w-7xl max-w-full mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-white dark:bg-zinc-900 rounded-[2rem] p-8 md:p-16 shadow-2xl border border-zinc-100 dark:border-zinc-800 overflow-hidden relative">
-        <div className="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-altin/5 rounded-full blur-3xl" />
         <div className="flex flex-col justify-center space-y-8 z-10">
           <div>
             <h2 className="text-4xl md:text-5xl font-serif text-zinc-900 dark:text-white leading-tight">
