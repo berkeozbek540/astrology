@@ -7,7 +7,6 @@ import { motion } from "framer-motion";
 import { LayoutDashboard, BookOpen, LogOut, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
 
 const navItems = [
   { name: "Genel Bakış", href: "/admin/dashboard", icon: LayoutDashboard },

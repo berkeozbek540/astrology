@@ -22,7 +22,7 @@ export const services: Services[] = [
     iconName: "book",
   },
   {
-    id: "dogum-haritası",
+    id: "dogum-haritasi",
     title: "Doğum Haritası",
     description:
       "Doğduğun andaki gökyüzü senin karakterini nasıl şekillendirdi? Derinlemesine analiz.",
