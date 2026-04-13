@@ -6,13 +6,13 @@ import Services from "@/components/home/Services";
 import PageTransition from "@/components/layout/PageTransition";
 import { db } from "@/lib/db";
 
-const posts = await db.post.findMany({
-  where: { published: true },
-  orderBy: { createdAt: "desc" },
-  take: 3,
-});
+const HomePage = async () => {
+  const posts = await db.post.findMany({
+    where: { published: true },
+    orderBy: { createdAt: "desc" },
+    take: 3,
+  });
 
-const HomePage = () => {
   return (
     <PageTransition>
       <div className="container mx-auto p-8 mb-8">
