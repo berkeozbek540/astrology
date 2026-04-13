@@ -38,7 +38,7 @@ const Hero = () => {
       </div>
       <div className="hidden md:block">
         <Image
-          src="/Hero.svg"
+          src="/hero.svg"
           alt="Hero Image"
           width={500}
           height={500}
