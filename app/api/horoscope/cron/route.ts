@@ -9,8 +9,9 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    const now = new Date();
+    const turkeyTime = new Date(now.toLocaleString("en-US", { timeZone: "Europe/Istanbul" }));
+    const today = new Date(turkeyTime.getFullYear(), turkeyTime.getMonth(), turkeyTime.getDate());
 
     const existingCount = await db.horoscope.count({
       where: { date: today },
