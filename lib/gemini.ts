@@ -28,7 +28,7 @@ export interface HoroscopeContent {
 }
 
 export async function generateAllHoroscopes(): Promise<Record<ZodiacSign, HoroscopeContent>> {
-  const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
+  const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-lite" });
 
   const today = new Date().toLocaleDateString("tr-TR", {
     day: "numeric",
