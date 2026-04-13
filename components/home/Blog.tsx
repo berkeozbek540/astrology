@@ -4,7 +4,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
-const Blog = ({ posts }: { posts: any[] }) => {
+type Post = {
+  id: number;
+  title: string;
+  slug: string;
+  description: string;
+  category: string;
+  coverImage: string;
+  createdAt: Date;
+};
+
+const Blog = ({ posts }: { posts: Post[] }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
