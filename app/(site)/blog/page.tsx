@@ -1,5 +1,7 @@
-import { db } from "@/lib/db"; // Prisma client yolun
+import { db } from "@/lib/db";
 import BlogListTable from "@/components/blog/BlogListTable";
+
+export const revalidate = 3600;
 
 export default async function BlogPage() {
   const posts = await db.post.findMany({

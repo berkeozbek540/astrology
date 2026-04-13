@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { auth } from "@/auth";
 import { db } from "@/lib/db";
+import { revalidatePath } from "next/cache";
 
 function generateSlug(title: string): string {
   return title
@@ -56,6 +57,8 @@ export async function POST(request: NextRequest) {
       },
     });
 
+    revalidatePath("/blog");
+
     return NextResponse.json(post, { status: 201 });
   } catch (error) {
     console.error("Post oluşturma hatası:", error);
@@ -86,6 +89,8 @@ export async function PUT(request: NextRequest) {
       },
     });
 
+    revalidatePath("/blog");
+
     return NextResponse.json(post);
   } catch (error) {
     console.error("Post güncelleme hatası:", error);
@@ -103,6 +108,8 @@ export async function DELETE(request: NextRequest) {
     const { id } = await request.json();
 
     await db.post.delete({ where: { id } });
+
+    revalidatePath("/blog");
 
     return NextResponse.json({ success: true });
   } catch (error) {

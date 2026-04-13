@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { BookOpen } from "lucide-react";
 
-// Senin Prisma modelinle birebir uyumlu tip tanımı
 type Post = {
   id: number;
   category: string;
