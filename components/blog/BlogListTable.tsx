@@ -7,7 +7,7 @@ import { BookOpen } from "lucide-react";
 type Post = {
   id: number;
   category: string;
-  coverImage?: string | null;
+  coverImage: string | null;
   title: string;
   slug: string;
   description: string;
@@ -33,7 +33,7 @@ const BlogCardGrid = ({ posts }: { posts: Post[] }) => {
                 <img
                   src={post.coverImage}
                   alt={post.title}
-                  className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full transition-transform duration-700 group-hover:scale-110"
                 />
               ) : (
                 <div className="w-full h-full flex items-center justify-center">

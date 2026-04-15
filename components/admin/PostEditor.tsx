@@ -154,7 +154,9 @@ const PostEditor = ({ post }: { post?: Post }) => {
           </select>
         </div>
         <div>
-          <label className="text-sm text-kahve font-medium mb-1 block">Kapak Fotoğrafı</label>
+          <label className="text-sm text-kahve font-medium mb-1 block">
+            Kapak Fotoğrafı (800x400)
+          </label>
           <input
             type="file"
             accept="image/*"
