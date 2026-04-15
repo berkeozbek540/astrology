@@ -13,7 +13,7 @@ type Post = {
   slug: string;
   description: string;
   category: string;
-  coverImage: string;
+  coverImage?: string | null;
   createdAt: Date;
 };
 
