@@ -19,7 +19,7 @@ const page = async ({ params }: BlogDetailProps) => {
   }
 
   const imageUrl = Blog.coverImage
-    ? `${Blog.coverImage}?width=500&height=300`
+    ? `${Blog.coverImage}?width=800&height=400`
     : "/default-placeholder.png";
 
   return (

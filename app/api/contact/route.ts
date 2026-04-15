@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
 
     await resend.emails.send({
       from: "onboarding@resend.dev",
-      to: "berkeozbek540@gmail.com",
+      to: "melisozbek.93@gmail.com",
       subject: `Yeni İletişim Formu: ${name}`,
       html: `
         <h2>Yeni Mesaj</h2>

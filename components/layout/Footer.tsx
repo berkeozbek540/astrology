@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
           <div>
             <h2 className="text-bej text-2xl">İletişim</h2>
-            <p className="text-bej">demo@gmail.com</p>
+            <p className="text-bej">melisozbek.93@gmail.com</p>
 
             <div className="flex gap-4">
               <Link href="https://www.instagram.com/astrolog.melistezcan/" target="_blank">

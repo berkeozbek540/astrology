@@ -34,7 +34,7 @@ const Contact = () => {
         </div>
         <div className="grid grid-cols-1 gap-4 z-10">
           <a
-            href="mailto:info@astrologmelis.com"
+            href="mailto:melisozbek.93@gmail.com"
             className="group flex items-center justify-between p-6 bg-zinc-50 dark:bg-zinc-800/50 rounded-2xl border border-transparent hover:border-altin/30 transition-all duration-300">
             <div className="flex items-center gap-4">
               <div className="p-4 bg-white dark:bg-zinc-800 rounded-xl shadow-sm group-hover:scale-110 transition-transform">
@@ -42,7 +42,7 @@ const Contact = () => {
               </div>
               <div>
                 <h4 className="font-bold text-zinc-900 dark:text-zinc-100">E-posta Gönder</h4>
-                <p className="text-sm text-zinc-500">info@astrologmelis.com</p>
+                <p className="text-sm text-zinc-500">melisozbek.93@gmail.com</p>
               </div>
             </div>
             <ArrowRight
