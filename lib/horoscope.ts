@@ -4,29 +4,7 @@ import { db } from "@/lib/db";
 export async function getHoroscope(slug: string) {
   const now = new Date();
   const turkeyTime = new Date(now.toLocaleString("en-US", { timeZone: "Europe/Istanbul" }));
-  const todayStart = new Date(
-    Date.UTC(turkeyTime.getFullYear(), turkeyTime.getMonth(), turkeyTime.getDate(), 0, 0, 0, 0),
-  );
-  const todayEnd = new Date(
-    Date.UTC(
-      turkeyTime.getFullYear(),
-      turkeyTime.getMonth(),
-      turkeyTime.getDate(),
-      23,
-      59,
-      59,
-      999,
-    ),
-  );
-
-  const existingCount = await db.horoscope.count({
-    where: {
-      date: {
-        gte: todayStart,
-        lte: todayEnd,
-      },
-    },
-  });
+  const today = new Date(turkeyTime.getFullYear(), turkeyTime.getMonth(), turkeyTime.getDate());
 
   // Simulate a delay to show the loading state
   //await new Promise((resolve) => setTimeout(resolve, 5000));
