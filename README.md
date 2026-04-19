@@ -1,5 +1,4 @@
 🌟 Astrology & Tarot Platform
-Project Status: This project is currently in active development. New features and modules are being integrated regularly.
 
 This is a comprehensive full-stack web application developed as a freelance project for a astrology brand. The platform was designed to scale content production through AI and provide a premium user experience for astrology enthusiasts.
 
@@ -14,3 +13,6 @@ This is a comprehensive full-stack web application developed as a freelance proj
 - Backend: Supabase, PostgreSQL, Prisma
 - AI: Gemini 2.5 Flash Lite API
 - Animations: Framer Motion
+
+Project Status: This project is currently in active development. New features and modules are being integrated regularly.
+Live : https://astrology-three-psi.vercel.app/
